@@ -23,6 +23,8 @@ requirements:
   run:
     - python
     - parso >=0.2.0
+    # See https://github.com/ContinuumIO/anaconda-issues/issues/8087
+    - numpydoc
 
 test:
   imports:
@@ -51,3 +53,4 @@ extra:
     - goanpeca
     - asmeurer
     - nehaljwani
+    - mingwandroid
