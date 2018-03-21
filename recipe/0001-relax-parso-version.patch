@@ -13,14 +13,14 @@ index 2c72b5f..00227ab 100644
 --- a/jedi.egg-info/requires.txt
 +++ b/jedi.egg-info/requires.txt
 @@ -1 +1 @@
--parso==0.1.0
+-parso==0.1.1
 +parso==0.1.*
 diff --git a/requirements.txt b/requirements.txt
 index 2c72b5f..00227ab 100644
 --- a/requirements.txt
 +++ b/requirements.txt
 @@ -1 +1 @@
--parso==0.1.0
+-parso==0.1.1
 +parso==0.1.*
 -- 
 2.7.4
