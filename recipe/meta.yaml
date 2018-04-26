@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -23,8 +23,6 @@ requirements:
   run:
     - python
     - parso >=0.2.0
-    # See https://github.com/ContinuumIO/anaconda-issues/issues/8087
-    - numpydoc
 
 test:
   imports:
