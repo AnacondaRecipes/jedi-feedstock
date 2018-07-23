@@ -1,0 +1,27 @@
+From d6f3c67b1c846c066d99275c7199a72b379be67b Mon Sep 17 00:00:00 2001
+From: Jonathan Helmus <jjhelmus@gmail.com>
+Date: Sat, 9 Dec 2017 00:45:16 -0600
+Subject: [PATCH] relax parso version
+
+---
+ jedi.egg-info/requires.txt | 2 +-
+ requirements.txt           | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/jedi.egg-info/requires.txt b/jedi.egg-info/requires.txt
+index 2c72b5f..00227ab 100644
+--- a/jedi.egg-info/requires.txt
++++ b/jedi.egg-info/requires.txt
+@@ -1 +1 @@
+-parso==0.1.1
++parso==0.1.*
+diff --git a/requirements.txt b/requirements.txt
+index 2c72b5f..00227ab 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1 +1 @@
+-parso==0.1.1
++parso==0.1.*
+-- 
+2.7.4
+

@@ -1,0 +1,38 @@
+From ff4a77391a3920d2d1547213cb34a9aef8fbaf79 Mon Sep 17 00:00:00 2001
+From: Carl George <carl@george.computer>
+Date: Fri, 15 Jun 2018 09:31:29 -0500
+Subject: [PATCH] Parse correct AST attribute for version
+
+Earlier development versions of Python 3.7 added the docstring field to
+AST nodes.  This was later reverted in Python 3.7.0b5.
+
+https://bugs.python.org/issue29463
+https://github.com/python/cpython/pull/7121
+---
+ setup.py | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index ea9a9794d..18a3b44f8 100755
+--- a/setup.py
++++ b/setup.py
+@@ -3,7 +3,6 @@
+ from setuptools import setup, find_packages
+ 
+ import ast
+-import sys
+ 
+ __AUTHOR__ = 'David Halter'
+ __AUTHOR_EMAIL__ = 'davidhalter88@gmail.com'
+@@ -11,10 +10,7 @@
+ # Get the version from within jedi. It's defined in exactly one place now.
+ with open('jedi/__init__.py') as f:
+     tree = ast.parse(f.read())
+-if sys.version_info > (3, 7):
+-    version = tree.body[0].value.s
+-else:
+-    version = tree.body[1].value.s
++version = tree.body[1].value.s
+ 
+ readme = open('README.rst').read() + '\n\n' + open('CHANGELOG.rst').read()
+ with open('requirements.txt') as f:
