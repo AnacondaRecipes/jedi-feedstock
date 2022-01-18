@@ -11,6 +11,9 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
+  # the minimal version of python supported is 3.6 
+  # https://github.com/davidhalter/jedi/blob/v0.18.1/setup.py#L34
+  skip: true  # [py<36]
 
 requirements:
   # # we don't currently use this for cross-compiling.
