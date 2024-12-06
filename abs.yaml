@@ -1,4 +1,4 @@
 channels:
-  - https://github.com/AnacondaRecipes/parso-feedstock/pull/3/6e415d3
+  - https://github.com/AnacondaRecipes/parso-feedstock/pull/3/f29dabb
 build_env_vars:
   ANACONDA_ROCKET_ENABLE_PY313 : yes
