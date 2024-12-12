@@ -1,4 +1,2 @@
-channels:
-  - https://staging.continuum.io/prefect/fs/parso-feedstock/pr3/73e7832
 build_env_vars:
   ANACONDA_ROCKET_ENABLE_PY313 : yes
