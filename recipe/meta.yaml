@@ -1,13 +1,13 @@
 {% set name = "jedi" %}
-{% set version = "0.19.2" %}
+{% set version = "0.20.0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4770dc3de41bde3966b02eb84fbcf557fb33cce26ad23da12c742fb50ecb11f0
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: c3f4ccbd276696f4b19c54618d4fb18f9fc24b0aef02acf704b23f487daa1011
 
 build:
   number: 0
