@@ -1,29 +1,29 @@
 {% set name = "jedi" %}
-{% set version = "0.19.2" %}
+{% set version = "0.20.0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4770dc3de41bde3966b02eb84fbcf557fb33cce26ad23da12c742fb50ecb11f0
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: c3f4ccbd276696f4b19c54618d4fb18f9fc24b0aef02acf704b23f487daa1011
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
   # the minimal version of python supported is 3.6
-  skip: true  # [py<36]
+  skip: true  # [py<310]
 
 requirements:
   host:
-    - python
     - pip
+    - python
     - setuptools
     - wheel
   run:
     - python
-    - parso >=0.8.4,<0.9.0
+    - parso >=0.8.6,<0.9.0
 
 test:
   imports:
@@ -42,7 +42,7 @@ test:
     - pip check
 
 about:
-  home: https://github.com/davidhalter/jedi/
+  home: https://github.com/davidhalter/jedi
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
@@ -52,8 +52,8 @@ about:
     Its historic focus is autocompletion, but does static analysis for now as
     well. Jedi is fast and is very well tested. It understands Python on a
     deeper level than all other static analysis frameworks for Python.
-  dev_url: https://github.com/davidhalter/jedi/
-  doc_url: https://jedi.readthedocs.io/
+  dev_url: https://github.com/davidhalter/jedi
+  doc_url: https://jedi.readthedocs.io
 
 extra:
   recipe-maintainers:
