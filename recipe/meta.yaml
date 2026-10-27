@@ -12,7 +12,6 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
-  # setup.py: python_requires >=3.10
   skip: true  # [py<310]
 
 requirements:
@@ -23,7 +22,6 @@ requirements:
   run:
     - python
     - parso >=0.8.7,<0.9.0
-  # dev/docs extras are developer tooling only; not translated to run_constrained.
 
 test:
   imports:
