@@ -1,5 +1,5 @@
 {% set name = "jedi" %}
-{% set version = "0.20.0" %}
+{% set version = "0.20.1" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c3f4ccbd276696f4b19c54618d4fb18f9fc24b0aef02acf704b23f487daa1011
+  sha256: 2f71208c3f9c1bca057c0e90d3f272aba44ace88fc4067d7587e9e069331b7e5
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
-  # the minimal version of python supported is 3.6
   skip: true  # [py<310]
 
 requirements:
@@ -20,10 +19,9 @@ requirements:
     - pip
     - python
     - setuptools
-    - wheel
   run:
     - python
-    - parso >=0.8.6,<0.9.0
+    - parso >=0.8.7,<0.9.0
 
 test:
   imports:
@@ -40,12 +38,16 @@ test:
     - pip
   commands:
     - pip check
+    # Upstream tests need the source tree and a python3.X executable on PATH; conda test env only has python.
 
 about:
   home: https://github.com/davidhalter/jedi
-  license: MIT
-  license_family: MIT
-  license_file: LICENSE.txt
+  license: Apache-2.0 AND MIT
+  license_family: Other
+  license_file:
+    - LICENSE.txt
+    - jedi/third_party/django-stubs/LICENSE.txt
+    - jedi/third_party/typeshed/LICENSE
   summary: An autocompletion tool for Python that can be used for text editors.
   description: |
     Jedi is a static analysis tool for Python that can be used in IDEs/editors.
